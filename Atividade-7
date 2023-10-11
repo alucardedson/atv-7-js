@@ -1,0 +1,90 @@
+/*Objetos Materiais
+
+1. Carro
+
+Atributos:
+
+marca (string) - a marca do carro.
+modelo (string) - o modelo do carro.
+ano (number) - o ano de fabricação do carro.
+Métodos:
+
+ligar() - liga o carro.
+desligar() - desliga o carro.
+acelerar(velocidade) - aumenta a velocidade do carro.*/
+
+const carro = {
+    marca: "Toyota",
+    modelo: "Corolla",
+    ano: 2022,
+    ligar() {
+      console.log("O carro está ligado.");
+    },
+    desligar() {
+      console.log("O carro está desligado.");
+    },
+    acelerar(velocidade) {
+      console.log(`Acelerando para ${velocidade} km/h.`);
+    }
+  };
+  
+  console.log("Carro:");
+  console.log(carro.marca);
+  console.log(carro.modelo);
+  console.log(carro.ano);
+  carro.ligar();
+  carro.acelerar(60);
+  carro.desligar();
+  
+Carro:
+Toyota
+Corolla
+2022
+O carro está ligado.
+Acelerando para 60 km/h.
+O carro está desligado.
+
+
+/*2. Mesa
+
+Atributos:
+
+material (string) - o material da mesa.
+cor (string) - a cor da mesa.
+largura (number) - a largura da mesa em centímetros.
+Métodos:
+
+colocarObjeto(objeto) - coloca um objeto na mesa.
+removerObjeto() - remove um objeto da mesa.
+limpar() - limpa a mesa.*/
+
+const mesa = {
+    material: "Madeira",
+    cor: "Marrom",
+    largura: 120,
+    colocarObjeto(objeto) {
+      console.log(`Colocando ${objeto} na mesa.`);
+    },
+    removerObjeto() {
+      console.log("Removendo objeto da mesa.");
+    },
+    limpar() {
+      console.log("Limpando a mesa.");
+    }
+  };
+  
+  console.log("Mesa:");
+  console.log(mesa.material);
+  console.log(mesa.cor);
+  console.log(mesa.largura);
+  mesa.colocarObjeto("Livro");
+  mesa.limpar(); //
+  mesa.removerObjeto();
+
+Mesa:
+Madeira
+Marrom
+120
+Colocando Livro na mesa.
+Limpando a mesa.
+Removendo objeto da mesa. 
