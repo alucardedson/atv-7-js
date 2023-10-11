@@ -88,3 +88,96 @@ Marrom
 Colocando Livro na mesa.
 Limpando a mesa.
 Removendo objeto da mesa. 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+/*Objetos Abstratos
+1. Conta Bancária
+
+Atributos:
+
+titular (string) - o titular da conta.
+saldo (number) - o saldo da conta.
+tipo (string) - o tipo de conta (poupança, corrente, etc).
+Métodos:
+
+depositar(valor) - deposita dinheiro na conta.
+sacar(valor) - retira dinheiro da conta.
+consultarSaldo() - verifica o saldo da conta.*/
+
+const contaBancaria = {
+    titular: "João Silva",
+    saldo: 5000,
+    tipo: "Corrente",
+    depositar(valor) {
+      this.saldo += valor;
+    },
+    sacar(valor) {
+      if (valor <= this.saldo) {
+        this.saldo -= valor;
+      } else {
+        console.log("Saldo insuficiente.");
+      }
+    },
+    consultarSaldo() {
+      console.log(`Saldo: R$${this.saldo.toFixed(2)}`);
+    }
+  };
+  
+  console.log("Conta Bancária:");
+  console.log(contaBancaria.titular);
+  console.log(contaBancaria.tipo);
+  contaBancaria.depositar(1000);
+  contaBancaria.consultarSaldo();
+  contaBancaria.sacar(2000);
+  contaBancaria.consultarSaldo();
+  
+Conta Bancária:
+João Silva
+Corrente
+Saldo: R$6000.00
+Saldo: R$4000.00
+
+
+/*2. Usuário
+
+Atributos:
+
+nome (string) - o nome do usuário.
+email (string) - o endereço de e-mail do usuário.
+idade (number) - a idade do usuário.
+Métodos:
+
+enviarEmail(destinatario, assunto, mensagem) - envia um e-mail para um destinatário.
+alterarIdade(novaIdade) - altera a idade do usuário.
+apresentar() - apresenta informações sobre o usuário.*/
+
+const usuario = {
+    nome: "Maria Souza",
+    email: "maria@example.com",
+    idade: 30,
+    enviarEmail(destinatario, assunto, mensagem) {
+      console.log(`Enviando e-mail para ${destinatario} - Assunto: ${assunto}\nMensagem: ${mensagem}`);
+    },
+    alterarIdade(novaIdade) {
+      this.idade = novaIdade;
+    },
+    apresentar() {
+      console.log(`Nome: ${this.nome}\nIdade: ${this.idade} anos`);
+    }
+  };
+  
+  console.log("Usuário:");
+  console.log(usuario.nome);
+  console.log(usuario.email);
+  usuario.enviarEmail("amigo@example.com", "Olá!", "Como você está?");
+  usuario.alterarIdade(35);
+  usuario.apresentar();
+  
+Usuário:
+Maria Souza
+maria@example.com
+Enviando e-mail para amigo@example.com - Assunto: Olá!
+Como você está?
+Nome: Maria Souza
+Idade: 35 anos
